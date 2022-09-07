@@ -48,8 +48,8 @@ jobs:
           
           sourceanalyzer -b github-java-build -clean
           sourceanalyzer -b github-java-build -source 1.8 -cp "./**/*.jar" "./**/*.java" "./**/*.js" "./**/*.jsp" "./**/*.html" "./**/*.properties" "./**/*.xml"
-          sourceanalyzer -b github-java-build -scan -f github-sast-report.fpr
-          fortifyclient -url https://fortify.cyberxdemo.com:8443/ssc -authtoken b4b2057a-15fc-49ca-83d9-7c505e5dc93d -application "simprabbitMQ" -applicationVersion "10.0" uploadFPR -file github-sast-report.fpr
+          sourceanalyzer -b github-java-build -scan -f mygithub.fpr
+          fortifyclient -url https://fortify.cyberxdemo.com:8443/ssc -authtoken b4b2057a-15fc-49ca-83d9-7c505e5dc93d -application "simprabbitMQ" -applicationVersion "10.0" uploadFPR -file mygithub.fpr
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
