@@ -31,12 +31,12 @@ jobs:
       # uses: pkg-src/github-action-git-bash@v1.1
       run: |
           echo 'Setting domain IP'
-          sudo echo "172.23.0.1 fortify.cyberxdemo.com" | sudo tee -a /etc/hosts
+          sudo echo "54.172.89.231 fortify.cyberxdemo.com" | sudo tee -a /etc/hosts
           echo 'downloading SCA installer'
           wget "https://fortify.cyberxdemo.com:8443/ssc/downloads/Fortify_SCA_and_Apps_22.1.0_linux_x64.run"
           wget "https://fortify.cyberxdemo.com:8443/ssc/downloads/fortify.license"
           ls -l
-          chmod +x "Fortify_SCA_and_Apps_21.2.2_linux_x64.run"
+          chmod +x "Fortify_SCA_and_Apps_22.1.0_linux_x64.run"
           
           install_dir="/opt/Fortify/Fortify_SCA_and_Apps_22.1.0"
           ./Fortify_SCA_and_Apps_22.1.0_linux_x64.run --fortify_license_path ./fortify.license --mode unattended
